@@ -90,7 +90,7 @@ def process_ring_data(ringdata_path: str, ids: list) -> pd.DataFrame:
                 # Process metrics
                 for metric in data.get("data", {}).get("metric_data", []):
                     metric_type = metric.get("type")
-                    if metric_type not in [ ]:
+                    if metric_type not in ['hr', 'temp', 'hrv', 'steps']:
                         continue
 
                     df_metric = pd.DataFrame(metric["object"]["values"])
